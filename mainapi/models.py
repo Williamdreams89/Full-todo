@@ -1,4 +1,4 @@
-from turtle import title
+from datetime import datetime
 from django.db import models
 from django.utils import timezone as tz
 
@@ -8,14 +8,15 @@ class Todo(models.Model):
     begins = models.TimeField(default=tz.now)
     ends = models.TimeField(default=tz.now)
     done = models.BooleanField(default=False)
-
+    start_date = models.DateField(default=datetime.now)
+    end_date = models.DateField(default=datetime.now)
     def __str__(self):
         if self.done:
             return "{}-Completed".format(self.title, self.done)
         else:
             return "{}-Not Completed".format(self.title, self.done)
             
-        
+    
     
 
     class Meta: 

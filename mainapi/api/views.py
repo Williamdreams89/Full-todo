@@ -4,7 +4,7 @@ from .serializers import TodoSerializer
 
 
 class TodoListView(ListAPIView):
-    queryset = Todo.objects.all()
+    queryset = Todo.objects.all().order_by("-start_date")
     serializer_class = TodoSerializer
 
 class TodoDetailView(RetrieveAPIView):
