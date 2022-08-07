@@ -5,8 +5,8 @@ from django.utils import timezone as tz
 
 class Todo(models.Model):
     title = models.CharField(max_length=100)
-    begins = models.TimeField(default=tz.now)
-    ends = models.TimeField(default=tz.now)
+    begins = models.DateTimeField(default=tz.now)
+    ends = models.DateTimeField(default=tz.now)
     done = models.BooleanField(default=False)
     start_date = models.DateField(default=datetime.now)
     end_date = models.DateField(default=datetime.now)

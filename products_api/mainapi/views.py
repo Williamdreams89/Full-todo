@@ -3,7 +3,7 @@ from rest_framework.generics import (
     CreateAPIView, 
     RetrieveAPIView, 
     UpdateAPIView, 
-    DestroyAPIView
+    DestroyAPIView, 
 )
 
 from products_api.models import Products

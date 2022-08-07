@@ -8,6 +8,8 @@ from .views import (
     ProductDeleteView
 )
 
+
+
 urlpatterns = [
     path("", ProductListView.as_view()),
     path("add_products/", ProductCreateView.as_view()),

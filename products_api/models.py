@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 
 
@@ -6,6 +7,7 @@ class Products(models.Model):
     tag = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     price = models.DecimalField(decimal_places=2, max_digits=100000, default="100.20")
+    productImage = models.ImageField(upload_to = "images/")
 
     
     def __str__(self):
