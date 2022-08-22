@@ -39,9 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     "corsheaders",
-    'mainapi',
-    'products_api'
+    "knox",
+    "API",
+    "accounts",
 ]
+
+REST_FRAMEWORK = {
+    "AUTHENTICATION_CLASSES": ['knox.auth.TokenAuthentication',]
+}
 
 CORS_ALLOW_ALL_ORIGINS = True
 MIDDLEWARE = [
