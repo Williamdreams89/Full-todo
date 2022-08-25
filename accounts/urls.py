@@ -12,3 +12,7 @@ urlpatterns = [
     path('api/auth/logout',knox_views.LogoutView.as_view(), name="knox-logout"),
 
 ]
+
+
+
+
