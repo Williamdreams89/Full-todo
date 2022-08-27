@@ -1,4 +1,5 @@
 from datetime import datetime
+from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone as tz
@@ -7,10 +8,10 @@ from datetime import date, time
 
 
 class Todolist(models.Model):
-    task_manager = models.ForeignKey(User, on_delete=models.CASCADE, related_name="todolist")
+    task_manager = models.ForeignKey(User, on_delete=models.CASCADE, related_name="todolist", default=1)
     title = models.CharField(max_length=100)
     start_time = models.TimeField(auto_now=True)
-    end_time = models.TimeField()
+    end_time = models.TimeField(auto_now=True)
     done = models.BooleanField(default=False)
     created = models.DateField(default=date.today)
 
